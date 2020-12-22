@@ -25,7 +25,7 @@ const useForm = (validate) => {
   };
 
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
+    if (Object.keys(errors).length === 0) {
       setValues({
         name: "",
         email: "",
