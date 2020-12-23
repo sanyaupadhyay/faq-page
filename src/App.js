@@ -1,4 +1,3 @@
-import "./App.css";
 import Faq from "./Faq";
 import Contact from "./contact";
 import styled from "styled-components";

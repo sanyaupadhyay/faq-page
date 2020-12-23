@@ -1,12 +1,15 @@
 import React from "react";
 import useForm from "./useForm";
 import validate from "./validateInfo";
-import "./Form.css";
 import styled from "styled-components";
 
 const formContent = styled.div`
   border-radius: 10px 10px 10px 10px;
   position: relative;
+  @media (max-width: 800px) {
+    justify-content: right;
+    margin-right: 10%;
+  }
 `;
 const FormInputs = styled.div`
   margin-bottom: 0.7rem;
@@ -30,6 +33,53 @@ const FormInput = styled.input`
   outline: none;
   border-radius: 3px;
   width: 135%;
+  box-sizing: border-box;
+  height: 30px;
+  box-shadow: none;
+  border: none;
+  border: 1px solid #bcbcbc;
+  :focus {
+    border: 1.5px solid rgb(133, 129, 129);
+  }
+`;
+const TextArea = styled.textarea`
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 3px;
+  width: 135%;
+  box-sizing: border-box;
+  height: 70px;
+  resize: none;
+  box-shadow: none;
+  border: none;
+  border: 1px solid #bcbcbc;
+  padding: 10px;
+  :focus {
+    border: 1.5px solid rgb(133, 129, 129);
+  }
+`;
+
+const PostButton = styled.button`
+  box-sizing: border-box;
+  width: 30%;
+  height: 30px;
+  margin-top: 5px;
+  border-radius: 3px;
+  background: black;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
+  :hover {
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      rgb(31, 32, 32) 0%,
+      rgb(23, 23, 24) 100%
+    );
+    transition: all 0.4s ease-out;
+  }
 `;
 
 export default function FormName() {
@@ -62,19 +112,16 @@ export default function FormName() {
         </FormInputs>
         <FormInputs>
           <FormLabel htmlFor="chat">Chat</FormLabel>
-          <textarea
+          <TextArea
             id="chat"
             type="text"
             name="chat"
-            className="form-input"
             value={values.chat}
             onChange={handleChange}
           />
           {errors.chat && <p>{errors.chat}</p>}
         </FormInputs>
-        <button className="form-btn" type="submit">
-          Post
-        </button>
+        <PostButton type="submit">Post</PostButton>
       </form>
     </formContent>
   );
