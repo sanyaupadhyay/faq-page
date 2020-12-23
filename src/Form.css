@@ -5,27 +5,29 @@
   /* background: linear-gradient(90deg, rgb(137, 109, 109) 0%, rgb(17, 17, 17) 100%); */
 }
 textarea {
+  box-sizing: border-box;
   height: 70px;
   resize: none;
   box-shadow: none;
   border: none;
-  border: 2px solid rgb(177, 172, 172);
+  border: 1px solid #bcbcbc;
+  padding: 10px;
 }
 input {
+  box-sizing: border-box;
   height: 30px;
   box-shadow: none;
   border: none;
-  border: 2px solid rgb(177, 172, 172);
-  /* transition: width 0.4s ease-in-out; */
+  border: 1px solid #bcbcbc;
 }
 textarea:focus,
 input:focus {
-  border: 3px solid rgb(164, 156, 156);
+  border: 1.5px solid rgb(133, 129, 129);
 }
 
 .form-inputs {
   margin-bottom: 0.7rem;
-  width: 120%;
+  width: 100%;
 }
 .form-input {
   display: block;

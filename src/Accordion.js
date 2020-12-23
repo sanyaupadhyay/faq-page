@@ -9,7 +9,7 @@ const AccordionSection = styled.div`
   align-items: center;
   justify-content: left;
   position: relative;
-  width: 550%;
+  width: 500%;
   @media (max-width: 769px) {
     width: 500%;
   }
@@ -19,12 +19,13 @@ const AccordionSection = styled.div`
 `;
 
 const Container = styled.div`
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   margin-top: 5%;
   width: 100%;
-  border: 2px solid gray;
-  border-top: 0.8px solid gray;
+  border: 1px solid #bcbcbc;
+  border-top: 1px solid gray;
   overflow: hidden;
   border-radius: 5px;
 `;
@@ -32,10 +33,7 @@ const Container = styled.div`
 const Wrap = styled.div`
   box-sizing: border-box;
   overflow: hidden;
-  border: 0.1px solid gray;
-  border-left: 0px;
-  border-bottom: 0px;
-  border-right: 0px;
+  border-top: 1px solid #bcbcbc;
   background: white;
   color: gray;
   display: flex;
@@ -47,18 +45,20 @@ const Wrap = styled.div`
   h1,
   p {
     padding: 0.5rem;
+    padding-left: 1.5rem;
     font-size: 1rem;
   }
 
   span {
     margin-right: 1.5rem;
+    color: black;
   }
 `;
 
 const Dropdown = styled.div`
   font-size: 1rem;
   padding: 0.5rem;
-  padding-left: 2.5rem;
+  padding-left: 3.5rem;
   display: flex;
 `;
 
@@ -80,7 +80,6 @@ function Accordion(props) {
             <>
               <Wrap onClick={() => toggle(index)} key={index}>
                 <h1>{item.question}</h1>
-
                 <span>{clicked === index ? " - " : "+"}</span>
               </Wrap>
               {clicked === index ? (
