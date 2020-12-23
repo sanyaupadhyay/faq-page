@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Data } from "./faq-data";
 
 const AccordionSection = styled.div`
+  background: white;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -25,7 +26,6 @@ const Container = styled.div`
   margin-top: 5%;
   width: 100%;
   border: 1px solid #bcbcbc;
-  border-top: 1px solid gray;
   overflow: hidden;
   border-radius: 5px;
 `;
@@ -41,6 +41,9 @@ const Wrap = styled.div`
   align-items: center;
   text-align: left;
   cursor: pointer;
+  :first-child {
+    border-top: 0px;
+  }
 
   h1,
   p {
@@ -56,6 +59,7 @@ const Wrap = styled.div`
 `;
 
 const Dropdown = styled.div`
+  background: white;
   font-size: 1rem;
   padding: 0.5rem;
   padding-left: 3.5rem;
