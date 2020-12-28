@@ -2,32 +2,33 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Data } from "./faq-data";
 
-const AccordionSection = styled.div`
-  background: white;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: left;
-  position: relative;
-  width: 500%;
-  @media (max-width: 769px) {
-    width: 500%;
-  }
-  @media (max-width: 768px) {
-    width: 200%;
-  }
-`;
-
 const Container = styled.div`
   box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
-  width: 100%;
+  display: flex;
+  //flex-direction: column;
+  //align-items: center;
+  //justify-content: center;
+  //position: relative;
   border: 1px solid #bcbcbc;
   overflow: hidden;
   border-radius: 5px;
+  //margin-top: 5%;
+  width: 100%;
+
+  @media (max-width: 769px) {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+    justify-content: center;
+  }
+`;
+const Temp = styled.div`
+  //position: absolute;
+  box-sizing: border-box;
+  //display: flexbox;
+  //top: 30%;
+  width: 100%;
 `;
 
 const Wrap = styled.div`
@@ -37,6 +38,7 @@ const Wrap = styled.div`
   background: white;
   color: gray;
   display: flex;
+  //width: 200%;
   justify-content: space-between;
   align-items: center;
   text-align: left;
@@ -50,6 +52,7 @@ const Wrap = styled.div`
     padding: 0.5rem;
     padding-left: 1.5rem;
     font-size: 1rem;
+    color:#bcbcbc;
   }
 
   span {
@@ -59,26 +62,30 @@ const Wrap = styled.div`
 `;
 
 const Dropdown = styled.div`
+  box-sizing: border-box;
   background: white;
   font-size: 1rem;
-  padding: 0.5rem;
-  padding-left: 3.5rem;
+  //padding: 0.5rem;
+  //padding-top: 0.25rem;
+  padding-left: 2rem;
+  padding-right:1rem;
   display: flex;
 `;
-
-function Accordion(props) {
-  const [clicked, setClicked] = useState(false);
-  const toggle = (index) => {
+interface Props {
+}
+function Accordion (props:Props) {
+  const [clicked, setClicked] = useState(-1);
+  const toggle = (index:any) => {
     if (clicked === index) {
-      return setClicked(null);
+      return setClicked(-1);
     }
 
     return setClicked(index);
   };
 
   return (
-    <AccordionSection>
-      <Container>
+    <Container>
+      <Temp>
         {Data.map((item, index) => {
           return (
             <>
@@ -94,8 +101,8 @@ function Accordion(props) {
             </>
           );
         })}
-      </Container>
-    </AccordionSection>
+      </Temp>
+    </Container>
   );
 }
 

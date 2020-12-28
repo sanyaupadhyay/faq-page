@@ -1,14 +1,15 @@
 import React from "react";
-import FormName from "./formName";
+import FormName from "./form";
 import styled from "styled-components";
 
 const Ul = styled.ul`
   margin: 0%;
+  width: 100%;
   list-style-type: none;
 `;
 const Header = styled.li`
   display: flex;
-  padding-bottom: 30%;
+  padding-bottom: 10%;
   font-size: 30px;
   @media (max-width: 769px) {
     margin-top: 20%;

@@ -3,6 +3,7 @@ import Contact from "./contact";
 import styled from "styled-components";
 
 const Container = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   @media (max-width: 769px) {

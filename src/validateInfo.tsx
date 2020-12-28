@@ -1,5 +1,5 @@
-export default function validateInfo(values) {
-  let errors = {};
+export default function validateInfo(values: { name:string, email :string,chat: string }) {
+  let errors: { name:string, email :string,chat: string } = { name:'', email :'',chat: '' };
 
   if (!values.name.trim()) {
     errors.name = "Name Required";
