@@ -19,14 +19,12 @@ const Header = styled.li`
 
 function Faq() {
   return (
-    <>
       <Ul>
         <Header>FAQs</Header>
         <li>
           <Accordion />
         </li>
       </Ul>
-    </>
   );
 }
 export default Faq;

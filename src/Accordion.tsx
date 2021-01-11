@@ -56,21 +56,17 @@ const Dropdown = styled.div`
   box-sizing: border-box;
   background: white;
   font-size: 1rem;
-  //padding: 0.5rem;
-  //padding-top: 0.25rem;
   padding-left: 2rem;
   padding-right:1rem;
   display: flex;
 `;
-interface Props {
-}
-function Accordion (props:Props) {
+
+function Accordion () {
   const [clicked, setClicked] = useState(-1);
-  const toggle = (index:any) => {
+  const toggle = (index:number) => {
     if (clicked === index) {
       return setClicked(-1);
     }
-
     return setClicked(index);
   };
 

@@ -18,7 +18,8 @@ const Text = styled(TextField)`
       border-color:gray; 
     }
     &.Mui-focused fieldset {
-      border-color:gray; 
+      border-color:gray;
+      font:gray; 
     }
   }
 `;
@@ -95,7 +96,7 @@ const PostButton = styled.button`
   }
 `;
 
-export default function FormName() {
+export default function Form() {
   const { handleChange, values, handleSubmit} = useForm();
 
   return (

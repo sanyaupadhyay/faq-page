@@ -1,5 +1,5 @@
 import React from "react";
-import FormName from "./form";
+import Form from "./Form"
 import styled from "styled-components";
 
 const Ul = styled.ul`
@@ -19,14 +19,12 @@ const Header = styled.li`
 
 function Contact() {
   return (
-    <>
       <Ul>
         <Header> Contact Us</Header>
         <li>
-          <FormName />
+          <Form />
         </li>
       </Ul>
-    </>
   );
 }
 export default Contact;
