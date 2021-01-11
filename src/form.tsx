@@ -1,18 +1,27 @@
 import React from "react";
 import useForm from "./useForm";
-import validate from "./validateInfo";
 import styled from "styled-components";
 import TextField from '@material-ui/core/TextField';
-import { styled  as styles} from '@material-ui/core/styles';
 
-
-const Text = styled(TextField)({
-  
-  border: 0,
-  borderRadius: 3,
-  color: 'white',
-  padding: '0 30px'
-});
+const Text = styled(TextField)`
+  border: 0;
+  color: black;
+  width: 100%;
+  label.focused {
+    color: gray; 
+  }
+  .MuiOutlinedInput-root {
+    fieldset {
+      border-color: #bcbcbc; 
+    }
+    &:hover fieldset {
+      border-color:gray; 
+    }
+    &.Mui-focused fieldset {
+      border-color:gray; 
+    }
+  }
+`;
 
 const FormContent = styled.div`
   border-radius: 10px 10px 10px 10px;
@@ -41,47 +50,23 @@ const FormInputs = styled.div`
     margin-right: 10%;
   }
 `;
-const FormLabel = styled.label`
-  display: inline-block;
-  font-size: 1rem;
-  margin-bottom: 0px;
-  color: rgb(19, 18, 18);
-`;
+
 const FormInput = styled.div`
   display: block;
-  //padding: 10px;
   outline: none;
-  //border-radius: 3px;
   width: 100%;
   box-sizing: border-box;
-  //height: 30px;
   box-shadow: none;
   border: none;
-  //border: 1px solid #bcbcbc;
-  :focus {
-    border: 1.5px solid rgb(133, 129, 129);
-  }
-`;
-const TextArea = styled.textarea`
-  display: block;
-  padding-left: 10px;
-  outline: none;
-  border-radius: 3px;
-  width: 100%;
-  box-sizing: border-box;
-  height: 70px;
-  resize: none;
-  box-shadow: none;
-  border: none;
-  border: 1px solid #bcbcbc;
-  padding: 10px;
   :focus {
     border: 1.5px solid rgb(133, 129, 129);
   }
 `;
 
+
 const PostButton = styled.button`
   box-sizing: border-box;
+  padding:1px;
   width: 10%;
   height: 30px;
   margin-top: 5px;
@@ -100,8 +85,8 @@ const PostButton = styled.button`
     );
     transition: all 0.4s ease-out;
   }
-  @media (max-width: 800px) {
-    width:10%;
+  @media (max-width: 1200px) {
+    width:15%;
     margin-right: 10%;
   }
   @media (max-width: 767px) {
@@ -111,7 +96,7 @@ const PostButton = styled.button`
 `;
 
 export default function FormName() {
-  const { handleChange, values, handleSubmit, errors} = useForm(validate);
+  const { handleChange, values, handleSubmit} = useForm();
 
   return (
     <FormContent>
@@ -127,17 +112,11 @@ export default function FormName() {
           name="email"
           value={values.email}
           onChange={handleChange}/></FormInput>
-          {/* <FormInput
-            id="email"
-            type="email"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-          /> */}
+
           {/* {errors.email && <p>{errors.email}</p>} */}
         </FormInputs>
         <FormInputs>
-        <TextField
+        <Text
            id="outlined-search" 
            label="Name" 
            type="text"
@@ -145,35 +124,25 @@ export default function FormName() {
            name="name"
            value={values.name}
            onChange={handleChange}/>
-          {/* <FormLabel htmlFor="name">Name</FormLabel>
-          <FormInput
-            id="name"
-            type="text"
-            name="name"
-            value={values.name}
-            onChange={handleChange}
-          /> */}
+          {/* /* <FormLabel htmlFor="name">Name</FormLabel>*/ }
+
           {/* {errors.name && <p>{errors.name}</p>} */}
         </FormInputs>
         <FormInputs>
-        <TextField
+        <Text
            id="outlined-search" 
            label="Chat" 
            type="text"
+           multiline
+           rows={4}
            variant="outlined" 
            name="chat"
            value={values.chat}
            onChange={handleChange}/>
-          {/* <FormLabel htmlFor="chat">Chat</FormLabel>
-          <TextArea
-            id="chat"
-            name="chat"
-            value={values.chat}
-            onChange={()=>handleChange}
-          /> */}
+          {/* <FormLabel htmlFor="chat">Chat</FormLabel>*/}
           {/* {errors.chat && <p>{errors.chat}</p>} */}
         </FormInputs>
-        <PostButton type="submit">Post</PostButton>
+        <PostButton type="submit">POST</PostButton>
       </form>
     </FormContent>
   );

@@ -5,14 +5,9 @@ import { Data } from "./faq-data";
 const Container = styled.div`
   box-sizing: border-box;
   display: flex;
-  //flex-direction: column;
-  //align-items: center;
-  //justify-content: center;
-  //position: relative;
   border: 1px solid #bcbcbc;
   overflow: hidden;
   border-radius: 5px;
-  //margin-top: 5%;
   width: 100%;
 
   @media (max-width: 769px) {
@@ -24,10 +19,7 @@ const Container = styled.div`
   }
 `;
 const Temp = styled.div`
-  //position: absolute;
   box-sizing: border-box;
-  //display: flexbox;
-  //top: 30%;
   width: 100%;
 `;
 
@@ -38,7 +30,6 @@ const Wrap = styled.div`
   background: white;
   color: gray;
   display: flex;
-  //width: 200%;
   justify-content: space-between;
   align-items: center;
   text-align: left;

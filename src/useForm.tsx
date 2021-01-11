@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-const useForm = (validate:any) => {
+const useForm = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
     chat: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors] = useState({});
 
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -19,7 +19,6 @@ const useForm = (validate:any) => {
 
   const handleSubmit = (e:React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setErrors(validate(values));
   };
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const useForm = (validate:any) => {
     }
   }, [errors]);
 
-  return { handleChange, handleSubmit, values, errors };
+  return { handleChange, handleSubmit, values };
 };
 
 export default useForm;
