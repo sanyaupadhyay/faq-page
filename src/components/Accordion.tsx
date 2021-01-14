@@ -64,7 +64,7 @@ const Dropdown = styled.div`
 function Accordion () {
   const [clicked, setClicked] = useState(-1);
   const toggle = (index:number) => {
-    if (clicked === index) {
+    if (clicked == index) {
       return setClicked(-1);
     }
     return setClicked(index);
