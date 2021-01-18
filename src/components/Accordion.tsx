@@ -5,6 +5,7 @@ import { Container , Temp, Wrap, Dropdown} from './componentStyles';
 function Accordion () {
   const [clicked, setClicked] = useState(-1);
   const toggle = (index:number) => {
+    // eslint-disable-next-line
     if (clicked == index) {
       return setClicked(-1);
     }
@@ -19,9 +20,11 @@ function Accordion () {
             <>
               <Wrap onClick={() => toggle(index)} key={index}>
                 <h1>{item.question}</h1>
-                <span>{clicked === index ? " - " : "+"}</span>
+                 {/* eslint-disable-next-line */}
+                <span>{clicked == index ? " - " : "+"}</span>
               </Wrap>
-              {clicked === index ? (
+              {/* eslint-disable-next-line */}
+              {clicked == index ? (
                 <Dropdown>
                   <p>{item.ansewer}</p>
                 </Dropdown>
